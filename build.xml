@@ -1,0 +1,20 @@
+<project name="super" default="maven-package" basedir=".">
+    <description>
+        An ant build file that provides access to Maven2 tasks
+    </description>
+
+    <target name="maven-package">
+        <exec executable="cmd">
+            <arg value="/C"/>
+            <arg value="mvn package"/>
+        </exec>
+    </target>
+
+    <target name="maven-install">
+        <exec executable="cmd">
+            <arg value="/C"/>
+            <arg value="mvn install"/>
+        </exec>
+    </target>
+    
+</project>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.blueskyminds</groupId>
+    <artifactId>super</artifactId>
+    <packaging>pom</packaging>
+
+    <!-- sequential number for version -->
+    <version>3</version>
+
+    <organization>
+        <name>Blue Sky Minds</name>
+        <url>http://www.blueskyminds.com.au/</url>
+    </organization>
+
+    <scm>
+       <connection>scm:svn:https://axe/svn/framework/HEAD</connection>
+       <developerConnection>scm:svn:http://axe/svn/framework/HEAD</developerConnection>
+       <url>http://axe/svn/framework/HEAD</url>
+    </scm>
+
+    <issueManagement/>
+    <ciManagement/>
+    <distributionManagement/>
+    <licenses/>    
+    
+    <developers>
+        <developer>
+            <id>jeromy</id>
+            <email>jeromy.evans@blueskyminds.com.au</email>
+            <roles>
+                <role>Managing Director</role>
+                <role>Team Lead</role>
+                <role>Senior Developer</role>
+            </roles>
+            <timezone>+10</timezone>
+        </developer>
+
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>PlanetMirror_AU</id>
+            <name>Planet Mirror (AUS)</name>
+            <url>http://public.planetmirror.com.au/pub/maven2</url>
+        </repository>
+            <repository>
+            <id>snapshots-maven-codehaus</id>
+            <name>snapshots-maven-codehaus</name>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <url>http://snapshots.maven.codehaus.org/maven2</url>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Maven Repository (Snapshots and Test Builds)</name>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+            <releases><enabled>false</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>opensymphony</id>
+            <name>opensymphony</name>
+            <layout>legacy</layout>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <url>http://maven.opensymphony.com</url>
+        </repository>
+          <repository>
+            <id>Maven Snapshots</id>
+            <url>http://snapshots.maven.codehaus.org/maven2/</url>
+            <snapshots>
+              <enabled>true</enabled>
+            </snapshots>
+            <releases>
+              <enabled>false</enabled>
+            </releases>
+          </repository>
+    </repositories>
+
+    <pluginRepositories>
+
+     <!--  <pluginRepository>
+           <id>central</id>
+           <url>http://repo1.maven.org/maven2</url>
+           <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>codehaus-plugins</id>
+            <url>http://dist.codehaus.org</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>codehaus-plugins-legacy</id>
+            <url>http://dist.codehaus.org</url>
+            <layout>legacy</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>-->
+        
+     <pluginRepository>
+        <id>Maven Snapshots</id>
+        <url>http://snapshots.maven.codehaus.org/maven2/</url>
+        <snapshots>
+          <enabled>true</enabled>
+        </snapshots>
+        <releases>
+          <enabled>false</enabled>
+        </releases>
+      </pluginRepository>
+      <pluginRepository>
+         <id>apache.snapshots</id>
+         <name>Apache Maven Repository (Snapshots and Test Builds)</name>
+         <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+         <releases><enabled>false</enabled></releases>
+         <snapshots><enabled>true</enabled></snapshots>
+     </pluginRepository>
+
+        
+    </pluginRepositories>
+<!--
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  -->    
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-idea-plugin</artifactId>
+                    <configuration>
+                        <jdkName>1.5</jdkName>
+                        <exclude>target,test-output,.clover</exclude>
+                        <useShortDependencyNames>true</useShortDependencyNames>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.0-beta-5</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                      <source>1.5</source>
+                      <target>1.5</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/TestBean.java</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>retrotranslator-maven-plugin</artifactId>
+                  <version>1.0-SNAPSHOT</version>
+                  <executions>
+                    <execution>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>translate</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>
+                                    <directory>${pom.basedir}/target/classes</directory>
+                                </include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                  </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <defaultGoal>install</defaultGoal>
+
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+             </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.2</version>
+                <!--
+                <configuration>
+                    <aggregate>true</aggregate>
+                </configuration>
+                -->
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+            <!--
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                  <configLocation>http://svn.apache.org/repos/asf/struts/maven/trunk/build/struts_checks.xml</configLocation>
+                </configuration>
+            </plugin>
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jxr-maven-plugin</artifactId>
+            </plugin>
+            <!--
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+            -->
+        </plugins>
+    </reporting>
+    
+    
+</project>
